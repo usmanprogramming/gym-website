@@ -1,0 +1,112 @@
+/* blog__blogfirst */
+.blog__blogfirst {
+  background-image: url("../../assets/banners/Blog//dumbell-lifting.webp");
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blog__blogfirst::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+}
+.blog__blogfirst .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+}
+
+.blog__blogfirst .container h1 {
+  color: var(--text-color);
+  font-size: clamp(30px, 5vw, 60px);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.blog__blogfirst .container h2 {
+  color: var(--primary-color);
+  font-size: clamp(18px, 2vw, 20px);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 768px) {
+  .blog__blogfirst .container {
+    align-items: center;
+  }
+}
+/* blog__blogsecond */
+.blog__blogsecond {
+  background-color: var(--secondary-color);
+}
+.blog__blogsecond .container {
+  text-align: center;
+}
+.blog__blogsecond .container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: var(--secondary-lighter);
+  border: none;
+  outline: none;
+  padding: 1rem;
+  border-radius: 5px;
+  color: var(--text-color);
+  font-size: 16px;
+}
+.blog__blogsecond-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+.blog__blogsecond-list p {
+  color: var(--text-color);
+}
+.blog__blogsecond-list_post {
+  background-color: var(--secondary-lighter);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.blog__blogsecond-list_post img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.blog__blogsecond-list_post h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+.blog__blogsecond-list_post p {
+  font-size: 14px;
+  color: var(--text-color);
+}
+.blog__blogsecond-list_post a {
+  margin: 10px 0;
+}
+.blog__blogsecond-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
