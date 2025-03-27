@@ -1,14 +1,16 @@
 import "./App.css";
 import Header from "./components/header/Header";
 import Home from "./pages/home/Home";
-import Blog from "./pages/blog/Blog"
+import Blog from "./pages/blog/Blog";
+import Trainers from "./pages/trainers/Trainers";
 
 function App() {
   return (
     <div className="app">
-      <Header />
+      {/* <Header />
       <Home />
-      <Blog />
+      <Blog /> */}
+      <Trainers />
     </div>
   );
 }

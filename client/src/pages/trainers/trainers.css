@@ -1,0 +1,122 @@
+/* trainers__trainersfirst */
+.trainers__trainersfirst {
+  background-image: url("../../assets/banners/Blog//dumbell-lifting.webp");
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trainers__trainersfirst::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+}
+.trainers__trainersfirst .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+}
+
+.trainers__trainersfirst .container h1 {
+  color: var(--text-color);
+  font-size: clamp(30px, 5vw, 60px);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.trainers__trainersfirst .container h2 {
+  color: var(--primary-color);
+  font-size: clamp(18px, 2vw, 20px);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 768px) {
+  .trainers__trainersfirst .container {
+    align-items: center;
+  }
+}
+
+/* trainers__trainerssecond */
+.trainers__trainerssecond {
+  background-color: var(--secondary-color);
+}
+.trainers__trainerssecond .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+.trainers__trainerssecond-heading h2 {
+  color: var(--primary-color);
+  font-size: clamp(18px, 2vw, 20px);
+}
+.trainers__trainerssecond-heading h1 {
+  color: var(--text-color);
+  font-size: clamp(30px, 5vw, 60px);
+}
+.trainers__trainerssecond-experts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.trainers__trainerssecond-experts_card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+.trainers__trainerssecond-experts_card:hover
+  .trainers__trainerssecond-experts_overlay
+  h3 {
+  color: var(--primary-color);
+}
+.trainers__trainerssecond-experts_overlay h3 {
+  transition: color 0.3s ease;
+}
+.trainers__trainerssecond-experts_card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trainers__trainerssecond-experts_overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.2rem;
+}
+.trainers__trainerssecond-gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.trainers__trainerssecond-gallery > * {
+  flex: 1;
+  max-width: 100%;
+}
