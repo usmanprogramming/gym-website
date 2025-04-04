@@ -35,7 +35,7 @@
   box-shadow: 0px 2px 0px var(--primary-color);
 }
 
-/* lower */
+/* Lower Section */
 .components__header-lower {
   background-color: var(--secondary-color);
   display: flex;
@@ -43,27 +43,74 @@
   align-items: center;
   padding: 1rem 2rem;
 }
+
+/* Logo */
 .components__header-lower_logo {
   display: flex;
-  justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 .components__header-lower_logo span {
   color: var(--primary-color);
 }
+
+/* Navigation */
 .components__header-lower_nav {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 4rem;
+  list-style: none;
+  transition: transform 0.3s ease-in-out;
 }
 .components__header-lower_nav li {
-  /* letter-spacing: 1px; */
   cursor: pointer;
-  transition: 0.3s ease;
   font-weight: bold;
+  transition: 0.3s ease;
 }
 .components__header-lower_nav li:hover {
   box-shadow: 0px 2px 0px var(--primary-color);
+}
+
+/* Contact Button & Hamburger */
+.components__header-lower_actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Hide normal navbar */
+  .components__header-lower_nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--secondary-color);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  /* Show menu when open */
+  .components__header-lower_nav.open {
+    display: flex;
+  }
+
+  /* Show Hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Keep Logo on Left, Hamburger & Contact on Right */
+  .components__header-lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
