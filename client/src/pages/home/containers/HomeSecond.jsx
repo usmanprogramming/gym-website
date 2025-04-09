@@ -1,5 +1,5 @@
 import React from "react";
-import couple from "../../../assets/banners/Home/couple.webp";
+import couple from "../../../assets/banners/couple.webp";
 import progression from "../../../assets/icons/arm-muscle.webp";
 import workout from "../../../assets/icons/barbell.webp";
 import nutrition from "../../../assets/icons/diet.webp";

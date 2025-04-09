@@ -82,8 +82,11 @@ img {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 6rem;
+  box-sizing: border-box;
 }
+
+
 .btn {
   display: inline-block;
   padding: clamp(6px, 1vw, 12px) clamp(12px, 2vw, 24px);
@@ -110,14 +113,3 @@ img {
     padding: 2rem;
   }
 }
-/* @media (hover: none) {
-  .nav-links li:hover,
-  .btn:hover,
-  .card:hover,
-  .header-upper_item:hover {
-    transform: none !important;
-    background: inherit !important;
-    color: inherit !important;
-    box-shadow: none !important;
-  }
-} */

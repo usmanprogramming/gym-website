@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../../assets/banners/Home/couple.webp";
+import banner from "../../../assets/banners/couple.webp";
 import icon1 from "../../../assets/icons/arm-muscle.webp";
 import icon2 from "../../../assets/icons/barbell.webp";
 import icon3 from "../../../assets/icons/diet.webp";

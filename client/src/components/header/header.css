@@ -1,10 +1,17 @@
 /* General Header Styles */
 .header {
   width: 100%;
+  /* position: fixed; */
   color: var(--text-color);
   background-color: var(--secondary-color);
+  z-index: 999;
 }
-
+/* .header.hidden {
+  top: -100%;
+}
+.header.visible {
+  top: 0;
+} */
 /* ===== Upper Header ===== */
 .header-upper {
   display: flex;

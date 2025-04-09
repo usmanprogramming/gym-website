@@ -4,6 +4,7 @@ import { LuPhone } from "react-icons/lu";
 import { MdOutlineMail } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom"; // Import Link
 import logo from "../../assets/icons/logo.png";
 import "./header.css";
 
@@ -38,7 +39,9 @@ const Header = () => {
       <div className="header-lower">
         {/* Logo */}
         <div className="header-lower_logo">
-          <img src={logo} alt="Logo" />
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            <img src={logo} alt="Logo" />
+          </Link>
           <h1>
             Titan <span>Gym</span>
           </h1>
@@ -52,8 +55,11 @@ const Header = () => {
           </div>
           <ul>
             {["Home", "Services", "Trainers", "Blog", "About"].map((item) => (
-              <li key={item} onClick={toggleMenu}>
-                {item}
+              <li key={item}>
+                {/* Convert item text to proper route path */}
+                <Link to={item === "Home" ? "/" : `/${item.toLowerCase()}`} onClick={toggleMenu}>
+                  {item}
+                </Link>
               </li>
             ))}
           </ul>
@@ -61,9 +67,11 @@ const Header = () => {
 
         {/* Contact Button & Hamburger */}
         <div className="header-actions">
-          <button className="btn">Contact Us</button>
+          <Link to="/contact">
+            <button className="btn">Contact Us</button>
+          </Link>
           <div className="hamburger" onClick={toggleMenu}>
-            <FiMenu size={30} />
+            {isOpen ? <IoMdClose size={30} /> : <FiMenu size={30} />}
           </div>
         </div>
       </div>

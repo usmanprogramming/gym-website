@@ -4,7 +4,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: hidden;
   position: relative;
   background-size: cover;
@@ -203,7 +203,7 @@
   box-shadow: var(--box-shadow);
   overflow: hidden;
   height: auto;
-  min-height: 450px;
+  /* min-height: 350px; */
   width: 100%;
 }
 
