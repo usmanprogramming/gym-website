@@ -16,12 +16,12 @@ import img5 from "../../../assets/carousel/brand-5.webp";
 
 const TrainersSecond = () => {
   const trainers = [
-    { name: "Usman Siddiqui", image: trainer1 },
-    { name: "Faizan Siddiqui", image: trainer2 },
-    { name: "Eshal Zahra", image: trainer3 },
-    { name: "Muhib Ahmed", image: trainer4 },
-    { name: "M. Hassan", image: trainer5 },
-    { name: "Sabeh Khan", image: trainer6 },
+    { name: "Steve", image: trainer1 },
+    { name: "Bob", image: trainer2 },
+    { name: "Carla", image: trainer3 },
+    { name: "Jake", image: trainer4 },
+    { name: "Ethan", image: trainer5 },
+    { name: "Brooks", image: trainer6 },
   ];
   const images = [img1, img2, img3, img4, img5];
 
