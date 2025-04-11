@@ -5,9 +5,9 @@ import trainer3 from "../../../assets/trainers/gymtrainer3.webp";
 
 const HomeFourth = () => {
   const trainers = [
-    { name: "Usman Siddiqui", image: trainer1 },
-    { name: "Faizan Siddiqui", image: trainer2 },
-    { name: "Eshal Zahra", image: trainer3 },
+    { name: "Steve", image: trainer1 },
+    { name: "Bob", image: trainer2 },
+    { name: "Carla", image: trainer3 },
   ];
 
   return (

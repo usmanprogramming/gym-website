@@ -20,17 +20,17 @@ const Header = () => {
       {/* Upper Section */}
       <div className="header-upper">
         <div className="header-upper_item">
-          <CiLocationOn size={20} />
+          <CiLocationOn size={16} />
           <p>430 E State St, Lola</p>
         </div>
         <span>|</span>
         <div className="header-upper_item">
-          <LuPhone size={20} />
+          <LuPhone size={16} />
           <p>+1 234 567 8900</p>
         </div>
         <span>|</span>
         <div className="header-upper_item">
-          <MdOutlineMail size={20} />
+          <MdOutlineMail size={16} />
           <p>abc@xyz.com</p>
         </div>
       </div>
@@ -57,7 +57,10 @@ const Header = () => {
             {["Home", "Services", "Team", "Blog", "About"].map((item) => (
               <li key={item}>
                 {/* Convert item text to proper route path */}
-                <Link to={item === "Home" ? "/" : `/${item.toLowerCase()}`} onClick={toggleMenu}>
+                <Link
+                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  onClick={toggleMenu}
+                >
                   {item}
                 </Link>
               </li>
