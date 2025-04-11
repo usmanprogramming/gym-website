@@ -12,33 +12,33 @@ import img5 from "../../../assets/carousel/brand-5.webp";
 
 const AboutThird = () => {
   const trainers = [
-    { name: "Usman Siddiqui", image: trainer1 },
-    { name: "Faizan Siddiqui", image: trainer2 },
-    { name: "Eshal Zahra", image: trainer3 },
+    { name: "Steve", image: trainer1 },
+    { name: "Bob", image: trainer2 },
+    { name: "Carla", image: trainer3 },
   ];
   const images = [img1, img2, img3, img4, img5];
   return (
     <div className="about__aboutthird">
       <div className="container">
-        <div className="home__homefourth-heading">
+        <div className="about__aboutthird-heading">
           <h2>Meet Our Team</h2>
           <h1>Meet Our Expert Trainers</h1>
         </div>
-        <div className="home__homefourth-experts">
+        <div className="about__aboutthird-experts">
           {trainers.map((trainer, index) => (
-            <div key={index} className="home__homefourth-experts_card">
+            <div key={index} className="about__aboutthird-experts_card">
               <img
                 src={trainer.image}
                 alt={trainer.name}
-                className="home__homefourth-experts_card-img"
+                className="about__aboutthird-experts_card-img"
               />
-              <div className="home__homefourth-experts_overlay">
+              <div className="about__aboutthird-experts_overlay">
                 <h3>{trainer.name}</h3>
               </div>
             </div>
           ))}
         </div>
-        <div className="home__homefourth-carousal">
+        <div className="about__aboutthird-gallery">
           <PhotoGallery images={images} />
         </div>
       </div>
