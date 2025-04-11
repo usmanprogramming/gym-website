@@ -67,18 +67,16 @@
   font-size: clamp(30px, 5vw, 60px);
 }
 .trainers__trainerssecond-experts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  width: 100%;
-  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
 }
 
 .trainers__trainerssecond-experts_card {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
   overflow: hidden;
   border-radius: 1rem;
   box-shadow: var(--box-shadow);
