@@ -54,7 +54,9 @@
     text-align: center;
     justify-content: center;
   }
-  .home__homefirst h2, .home__homefirst h1, .home__homefirst p {
+  .home__homefirst h2,
+  .home__homefirst h1,
+  .home__homefirst p {
     text-align: center;
   }
 }
@@ -222,12 +224,11 @@
   flex-direction: column;
   align-items: center;
   background: var(--secondary-color);
-  border-radius: 2rem;
   box-shadow: var(--box-shadow);
+  border-radius: 2rem;
   overflow: hidden;
   height: auto;
   max-height: 300px;
-  /* min-height: 350px; */
   width: 100%;
 }
 
