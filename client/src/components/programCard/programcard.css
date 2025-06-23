@@ -1,0 +1,45 @@
+.components__programcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--secondary-color);
+  border-radius: 2rem;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  height: auto;
+  max-height: 300px;
+  width: 100%;
+}
+.components__programcard-img {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.components__programcard-img img {
+  width: 90%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.components__programcard-details {
+  width: 100%;
+  padding: 0 1rem;
+  text-align: center;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.components__programcard-details h3 {
+  color: var(--primary-color);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}

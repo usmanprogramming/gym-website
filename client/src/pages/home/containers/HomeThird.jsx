@@ -1,24 +1,11 @@
 import React from "react";
+import Programcard from "../../../components/programCard/Programcard"
 import strength from "../../../assets/services/strength.webp";
 import cardio from "../../../assets/services/cardio.webp";
 import yoga from "../../../assets/services/yoga.webp";
 import weight from "../../../assets/services/weight.webp";
 import martial from "../../../assets/services/martial-art.webp";
 import athletic from "../../../assets/services/athlete.webp";
-
-const Card = ({ img, title, description }) => {
-  return (
-    <div className="home__homethird-cards_card">
-      <div className="home__homethird-cards_card-img">
-        <img src={img} alt={title} />
-      </div>
-      <div className="home__homethird-cards_card-detail">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-};
 
 const HomeThird = () => {
   const trainingPrograms = [
@@ -69,7 +56,7 @@ const HomeThird = () => {
         </div>
         <div className="home__homethird-cards">
           {trainingPrograms.map((program, index) => (
-            <Card key={index} {...program} />
+            <Programcard key={index} {...program} />
           ))}
         </div>
       </div>
