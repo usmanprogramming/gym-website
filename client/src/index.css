@@ -106,11 +106,30 @@ img {
   padding: clamp(2rem, 5vw, 6rem);
   box-sizing: border-box;
 }
-
+.header-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 5vw, 6rem);
+  box-sizing: border-box;
+}
 
 @media (max-width: 768px) {
   .container {
     text-align: center;
     padding: 2rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .header-container {
+    padding: 0 1rem;
   }
 }

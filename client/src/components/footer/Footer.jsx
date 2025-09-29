@@ -111,7 +111,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
           <div className="footer-upper-contact">
             <div className="footer-upper-contact-heading">
               <h3>Contact Info:</h3>

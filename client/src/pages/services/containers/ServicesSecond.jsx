@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import strength from "../../../assets/services/strength.webp";
 import cardio from "../../../assets/services/cardio.webp";
 import yoga from "../../../assets/services/yoga.webp";
@@ -15,8 +15,76 @@ import img5 from "../../../assets/carousel/brand-5.webp";
 import PhotoGallery from "../../../components/carousel/Carousel";
 import Programcard from "../../../components/programCard/Programcard";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const ServicesSecond = () => {
+  const headingRef = useRef(null);
+  const cardsRef = useRef(null);
+  const galleryRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate heading
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top bottom",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Animate Program cards one by one
+      gsap.fromTo(
+        ".services__servicessecond-cards .components__programcard",
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top bottom",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Animate Gallery
+      gsap.fromTo(
+        galleryRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: galleryRef.current,
+            start: "top bottom",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   const images = [img1, img2, img3, img4, img5];
+
   const trainingPrograms = [
     {
       img: strength,
@@ -55,14 +123,16 @@ const ServicesSecond = () => {
         "It is long estabas and many lished fact will been distracted atempts by them content system and looking for its layout..",
     },
   ];
+
   return (
     <div className="services__servicessecond">
       <div className="container">
-        <div className="services__servicessecond-heading">
+        <div className="services__servicessecond-heading" ref={headingRef}>
           <h2>Our Services</h2>
           <h1>Training Programs</h1>
         </div>
-        <div className="services__servicessecond-cards">
+
+        <div className="services__servicessecond-cards" ref={cardsRef}>
           {trainingPrograms.map((program, index) => (
             <Programcard
               key={index}
@@ -72,7 +142,8 @@ const ServicesSecond = () => {
             />
           ))}
         </div>
-        <div className="services__servicessecond-gallery">
+
+        <div className="services__servicessecond-gallery" ref={galleryRef}>
           <PhotoGallery images={images} />
         </div>
       </div>
