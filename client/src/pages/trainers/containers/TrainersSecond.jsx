@@ -1,12 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-import trainer1 from "../../../assets/trainers/gymtrainer1.webp";
-import trainer2 from "../../../assets/trainers/gymtrainer2.webp";
-import trainer3 from "../../../assets/trainers/gymtrainer3.webp";
-import trainer4 from "../../../assets/trainers/gymtrainer4.webp";
-import trainer5 from "../../../assets/trainers/gymtrainer5.webp";
-import trainer6 from "../../../assets/trainers/gymtrainer6.webp";
+import Photogallery from "../../../components/carousel/Carousel";
+import Trainercard from "../../../components/trainerCard/Trainercard";
+import trainersData from "../../../trainersData";
 
 import img1 from "../../../assets/carousel/brand-1.webp";
 import img2 from "../../../assets/carousel/brand-2.webp";
@@ -14,20 +11,9 @@ import img3 from "../../../assets/carousel/brand-3.webp";
 import img4 from "../../../assets/carousel/brand-4.webp";
 import img5 from "../../../assets/carousel/brand-5.webp";
 
-import Photogallery from "../../../components/carousel/Carousel";
-import Trainercard from "../../../components/trainerCard/Trainercard";
-
-const TrainersSecond = () => {
+const TrainersSecond = ({ count = 6 }) => {
   const sectionRef = useRef(null);
 
-  const trainers = [
-    { name: "Steve", image: trainer1 },
-    { name: "Bob", image: trainer2 },
-    { name: "Carla", image: trainer3 },
-    { name: "Logan", image: trainer4 },
-    { name: "Ethan", image: trainer5 },
-    { name: "Jake", image: trainer6 },
-  ];
   const images = [img1, img2, img3, img4, img5];
 
   useEffect(() => {
@@ -72,9 +58,9 @@ const TrainersSecond = () => {
         </div>
 
         <div className="trainers__trainerssecond-experts">
-          {trainers.map((trainer, index) => (
+          {trainersData.slice(0, count).map((trainer) => (
             <Trainercard
-              key={index}
+              key={trainer.id}
               image={trainer.image}
               name={trainer.name}
             />

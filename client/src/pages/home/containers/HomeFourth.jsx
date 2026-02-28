@@ -1,14 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import Trainercard from "../../../components/trainerCard/Trainercard";
-import trainer1 from "../../../assets/trainers/gymtrainer1.webp";
-import trainer2 from "../../../assets/trainers/gymtrainer2.webp";
-import trainer3 from "../../../assets/trainers/gymtrainer3.webp";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import trainers from "../../../trainersData";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HomeFourth = () => {
+const HomeFourth = ({ count = 3 }) => {
   const headingRef = useRef(null);
   const trainersRef = useRef(null);
 
@@ -29,7 +27,7 @@ const HomeFourth = () => {
             // end: "bottom top",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // Animate trainer cards one by one
@@ -48,18 +46,12 @@ const HomeFourth = () => {
             // end: "bottom top",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     });
 
     return () => ctx.revert();
   }, []);
-
-  const trainers = [
-    { name: "Usman", image: trainer1 },
-    { name: "Random uncle", image: trainer2 },
-    { name: "Sama", image: trainer3 },
-  ];
 
   return (
     <div className="home__homefourth">
@@ -69,9 +61,9 @@ const HomeFourth = () => {
           <h1>Meet Our Expert Trainers</h1>
         </div>
         <div className="home__homefourth-experts" ref={trainersRef}>
-          {trainers.map((trainer, index) => (
+          {trainers.slice(0, count).map((trainer) => (
             <Trainercard
-              key={index}
+              key={trainer.id}
               image={trainer.image}
               name={trainer.name}
             />

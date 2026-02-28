@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import phone from "../../../assets/icons/phone.webp";
@@ -28,6 +28,14 @@ const contactDetails = [
 ];
 
 const ContactSecond = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    number: "",
+    subject: "",
+    message: "",
+  });
+
   const headingRef = useRef(null);
   const detailsRef = useRef([]);
 
@@ -62,6 +70,43 @@ const ContactSecond = () => {
     return () => ctx.revert();
   }, []);
 
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          number: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        alert(data.error || "Something went wrong");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Server error");
+    }
+  };
+
   return (
     <div className="contact__contactsecond">
       <div className="container">
@@ -70,12 +115,50 @@ const ContactSecond = () => {
             <h2>Contact us</h2>
             <h1>Need any help? Feel free to contact us.</h1>
           </div>
-          <form className="contact__contactsecond-left_form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <input type="tel" placeholder="Your Phone Number" required />
-            <input type="text" placeholder="Subject" required />
-            <textarea placeholder="Your Message" rows="6" required></textarea>
+          <form
+            className="contact__contactsecond-left_form"
+            onSubmit={handleSubmit}
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="tel"
+              name="number"
+              placeholder="Your Phone Number"
+              value={formData.number}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="6"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
             <button type="submit" className="btn">
               Send Message
             </button>
