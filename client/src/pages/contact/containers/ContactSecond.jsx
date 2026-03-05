@@ -77,8 +77,11 @@ const ContactSecond = () => {
     });
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     try {
       const res = await fetch("https://titan-gym-sigma.onrender.com/contact", {
@@ -104,6 +107,8 @@ const ContactSecond = () => {
     } catch (error) {
       console.error(error);
       alert("Server error");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -159,8 +164,8 @@ const ContactSecond = () => {
               onChange={handleChange}
               required
             ></textarea>
-            <button type="submit" className="btn">
-              Send Message
+            <button type="submit" className="btn" disabled={isLoading}>
+              {isLoading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
