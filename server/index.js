@@ -22,10 +22,20 @@ app.post("/contact", async (req, res) => {
 
   // 1. Create the transporter (Using the 16-char password WITHOUT spaces)
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // Use SSL
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
+    },
+    // ADD THIS LINE BELOW:
+    connectionTimeout: 10000, // 10 seconds
+    greetingTimeout: 10000,
+    socketTimeout: 10000,
+    dnsLookup: (hostname, options, callback) => {
+      // This forces the connection to use IPv4
+      require("dns").lookup(hostname, { family: 4 }, callback);
     },
   });
 
