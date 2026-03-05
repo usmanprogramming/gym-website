@@ -31,7 +31,7 @@ const HomeThird = () => {
             start: "top bottom",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // Animate cards one by one
@@ -49,7 +49,7 @@ const HomeThird = () => {
             start: "top bottom",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     });
 
@@ -96,7 +96,7 @@ const HomeThird = () => {
   ];
 
   return (
-    <div className="home__homethird">
+    <div className="home__homethird hero-section">
       <div className="container">
         <div className="home__homethird-heading" ref={headingRef}>
           <h2>Our Services</h2>

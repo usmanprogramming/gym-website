@@ -39,7 +39,7 @@ const HomeSecond = () => {
             start: "top bottom",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // Animate cards one by one
@@ -57,7 +57,7 @@ const HomeSecond = () => {
             start: "top bottom",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     });
 
@@ -92,7 +92,7 @@ const HomeSecond = () => {
   ];
 
   return (
-    <div className="home__homesecond">
+    <div className="home__homesecond hero-section">
       <div className="container">
         <div className="home__homesecond-img">
           <img src={couple} alt="banner" />

@@ -65,7 +65,7 @@ const AboutSecond = () => {
           },
           immediateRender: false,
           overwrite: "auto",
-        }
+        },
       );
 
       // cards – use fromTo and immediateRender:false to avoid jumpy behavior
@@ -87,7 +87,7 @@ const AboutSecond = () => {
             },
             immediateRender: false,
             overwrite: "auto",
-          }
+          },
         );
       }
     });
@@ -96,7 +96,7 @@ const AboutSecond = () => {
   }, []);
 
   return (
-    <div className="about__aboutsecond">
+    <div className="about__aboutsecond hero-section">
       <div className="container">
         <div className="about__aboutsecond-upper">
           <div className="about__aboutsecond-upper_img">

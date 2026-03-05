@@ -15,9 +15,10 @@
   --secondary-lighter: rgb(45, 46, 48);
   --text-color: #ffffff;
   --font-family: "Oswald", sans-serif;
-  --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  --box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /* 3️⃣ Apply Global Styles */
@@ -89,9 +90,12 @@ img {
   font-size: clamp(12px, 1.2vw, 16px);
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .btn:hover {
@@ -112,6 +116,38 @@ img {
   margin: 0 auto;
   padding: 0 clamp(2rem, 5vw, 6rem);
   box-sizing: border-box;
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+  /* This creates a "vignette" effect with an orange core that moves */
+  background-image:
+    radial-gradient(at 0% 0%, hsla(18, 100%, 55%, 0.15) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(18, 100%, 55%, 0.1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(18, 100%, 55%, 0.15) 0, transparent 50%);
+  background-size: 200% 200%;
+  animation: mesh-move 10s infinite alternate;
+}
+
+@keyframes mesh-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Add a subtle "noise" texture to make it look premium/grainy */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
