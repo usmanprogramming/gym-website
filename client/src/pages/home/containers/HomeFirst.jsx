@@ -2,9 +2,6 @@ import banner1 from "../../../assets/banners/lifting.webp";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Homefirst = () => {
   const contentRef = useRef(null);

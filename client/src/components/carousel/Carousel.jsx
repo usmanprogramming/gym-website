@@ -26,6 +26,7 @@ const Carousel = ({ images }) => {
                 src={image}
                 alt={`Gallery ${index + 1}`}
                 className="components__carousel-slide_img"
+                loading="lazy"
               />
             </div>
           </SwiperSlide>

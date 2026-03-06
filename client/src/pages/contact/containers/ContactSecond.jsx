@@ -77,11 +77,13 @@ const ContactSecond = () => {
     });
   };
 
+  const [status, setStatus] = useState({ type: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setStatus({ type: "", message: "" });
 
     try {
       const res = await fetch("https://titan-gym-sigma.onrender.com/contact", {
@@ -93,7 +95,7 @@ const ContactSecond = () => {
       const data = await res.json();
 
       if (res.ok) {
-        alert("Message sent successfully!");
+        setStatus({ type: "success", message: "Message sent successfully!" });
         setFormData({
           name: "",
           email: "",
@@ -102,11 +104,11 @@ const ContactSecond = () => {
           message: "",
         });
       } else {
-        alert(data.error || "Something went wrong");
+        setStatus({ type: "error", message: data.error || "Something went wrong" });
       }
     } catch (error) {
       console.error(error);
-      alert("Server error");
+      setStatus({ type: "error", message: "Server error. Please try again later." });
     } finally {
       setIsLoading(false);
     }
@@ -124,6 +126,19 @@ const ContactSecond = () => {
             className="contact__contactsecond-left_form"
             onSubmit={handleSubmit}
           >
+            {status.message && (
+              <div style={{ 
+                padding: '1rem', 
+                marginBottom: '1rem', 
+                borderRadius: '5px',
+                backgroundColor: status.type === 'success' ? '#4caf5022' : '#f4433622',
+                color: status.type === 'success' ? '#4caf50' : '#f44336',
+                border: `1px solid ${status.type === 'success' ? '#4caf50' : '#f44336'}`,
+                textAlign: 'center'
+              }}>
+                {status.message}
+              </div>
+            )}
             <input
               type="text"
               name="name"

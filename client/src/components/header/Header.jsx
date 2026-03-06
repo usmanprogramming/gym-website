@@ -4,7 +4,7 @@ import { LuPhone } from "react-icons/lu";
 import { MdOutlineMail } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/icons/logo.png";
 import "./header.css";
 
@@ -60,12 +60,13 @@ const Header = () => {
               {["Home", "Services", "Team", "Blog", "About"].map((item) => (
                 <li key={item}>
                   {/* Convert item text to proper route path */}
-                  <Link
+                  <NavLink
                     to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                     onClick={toggleMenu}
+                    className={({ isActive }) => (isActive ? "active-link" : "")}
                   >
                     {item}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>

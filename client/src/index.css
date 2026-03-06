@@ -101,6 +101,7 @@ img {
 .btn:hover {
   background-color: transparent;
   color: var(--primary-color);
+  transform: scale(1.05);
 }
 
 .container {

@@ -19,6 +19,8 @@ import { MdEmail } from "react-icons/md";
 
 import { MdDoubleArrow } from "react-icons/md";
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const images = [img1, img2, img3, img4];
   return (
@@ -80,34 +82,34 @@ const Footer = () => {
             </div>
             <ul className="footer-upper-links-rest">
               <li>
-                <a href="/contact">
+                <Link to="/contact">
                   <MdDoubleArrow />
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services">
+                <Link to="/services">
                   <MdDoubleArrow />
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/team">
+                <Link to="/team">
                   <MdDoubleArrow />
                   Team
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blog">
+                <Link to="/blog">
                   <MdDoubleArrow />
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about">
+                <Link to="/about">
                   <MdDoubleArrow />
                   About Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

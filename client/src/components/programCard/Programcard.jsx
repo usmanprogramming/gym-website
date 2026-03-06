@@ -5,7 +5,7 @@ const Programcard = ({ img, title, description }) => {
   return (
     <div className="components__programcard">
       <div className="components__programcard-img">
-        <img src={img} alt={title} />
+        <img src={img} alt={title} loading="lazy" />
       </div>
       <div className="components__programcard-details">
         <h3>{title}</h3>
