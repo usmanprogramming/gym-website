@@ -32,7 +32,7 @@ const Header = () => {
           <span>|</span>
           <div className="header-upper_item">
             <MdOutlineMail size={16} />
-            <p>abc@xyz.com</p>
+            <p>warlegend098@gmail.com</p>
           </div>
         </div>
       </div>
@@ -63,7 +63,9 @@ const Header = () => {
                   <NavLink
                     to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                     onClick={toggleMenu}
-                    className={({ isActive }) => (isActive ? "active-link" : "")}
+                    className={({ isActive }) =>
+                      isActive ? "active-link" : ""
+                    }
                   >
                     {item}
                   </NavLink>

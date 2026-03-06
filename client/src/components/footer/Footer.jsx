@@ -36,8 +36,8 @@ const Footer = () => {
             </div>
             <div className="footer-upper-main-rest">
               <p>
-                Lorem Ipsum is simply dummy text and printing and typesetting
-                industry has the industry's standardd.
+                Empowering you to reach your peak, building strength, stamina,
+                and confidence every day.
               </p>
               <div className="footer-upper-main-rest-follow">
                 <h6>Follow us today:</h6>
@@ -146,7 +146,7 @@ const Footer = () => {
         </div>
         <div className="footer-lower">
           <p>Titan Gym | Developed by: Usman Siddiqui</p>
-          <p>© Fitnase 2026 | All Right Reserved</p>
+          <p>© Titan Gym 2026 | All Right Reserved</p>
         </div>
       </div>
     </div>
