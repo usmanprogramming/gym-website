@@ -5,9 +5,6 @@ import nutrition from "../../../assets/icons/diet.webp";
 import selfdefence from "../../../assets/icons/martial-arts.webp";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ReasonCard = ({ img, title, description }) => {
   return (

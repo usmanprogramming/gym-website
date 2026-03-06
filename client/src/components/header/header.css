@@ -108,6 +108,11 @@
   color: var(--primary-color);
 }
 
+.active-link {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
 /* Hamburger (only for mobile) */
 .hamburger {
   display: none;

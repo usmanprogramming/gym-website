@@ -1,10 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Trainercard from "../../../components/trainerCard/Trainercard";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import trainers from "../../../trainersData";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const HomeFourth = ({ count = 3 }) => {
   const headingRef = useRef(null);

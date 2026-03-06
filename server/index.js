@@ -1,13 +1,17 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { Resend } from "resend"; // Make sure you ran 'npm install resend'
+import helmet from "helmet";
+import compression from "compression";
+import { Resend } from "resend";
 
 dotenv.config();
 
 const app = express();
-const resend = new Resend(process.env.RESEND_API_KEY); // Uses the key from Render
+const resend = new Resend(process.env.RESEND_API_KEY);
 
+app.use(helmet());
+app.use(compression());
 app.use(cors());
 app.use(express.json());
 

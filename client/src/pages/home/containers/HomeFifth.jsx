@@ -5,9 +5,6 @@ import img2 from "../../../assets/carousel/img2.webp";
 import img3 from "../../../assets/carousel/img3.webp";
 import img4 from "../../../assets/carousel/img4.webp";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const HomeFifth = () => {
   const headingRef = useRef(null);

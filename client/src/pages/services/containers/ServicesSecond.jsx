@@ -16,9 +16,6 @@ import PhotoGallery from "../../../components/carousel/Carousel";
 import Programcard from "../../../components/programCard/Programcard";
 
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSecond = () => {
   const headingRef = useRef(null);
@@ -90,37 +87,37 @@ const ServicesSecond = () => {
       img: strength,
       title: "Strength Training",
       description:
-        "It is long estabas and many lished fact will been distracted atempts by them content system and looking for its layout.",
+        "Build lean muscle and increase raw power through structured weightlifting and progressive resistance training.",
     },
     {
       img: cardio,
       title: "Cardio Workouts",
       description:
-        "It is long estabas and many lished fact will been distracted atempts by them content system and looking for its layout.",
+        "Ignite your metabolism and improve cardiovascular health with high-energy interval and endurance sessions.",
     },
     {
       img: yoga,
       title: "Yoga & Flexibility",
       description:
-        "It is long estabas and many lished fact will been distracted atempts by them content system and looking for its layout.",
+        "Enhance your mobility, reduce stress, and find balance with guided yoga and functional stretching classes.",
     },
     {
       img: weight,
       title: "Weight Loss",
       description:
-        "It is long estabas and many lished fact will been distracted atempts by them content system and looking for its layout.",
+        "Transform your body with efficient calorie-burning workouts paired with expert nutritional guidance.",
     },
     {
       img: martial,
       title: "Martial Arts",
       description:
-        "It is long estabas and many lished fact will been distracted atempts by them content system and looking for its layout..",
+        "Master self-defense techniques and build incredible discipline through our elite combat training programs.",
     },
     {
       img: athletic,
       title: "Athletic Performance",
       description:
-        "It is long estabas and many lished fact will been distracted atempts by them content system and looking for its layout..",
+        "Unlock your peak potential with specialized drills focusing on agility, explosive speed, and core stability.",
     },
   ];
 
