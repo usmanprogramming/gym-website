@@ -130,7 +130,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-upper-contact-rest-details-email">
                   <MdEmail />
-                  fitnase@e-plugins.com
+                  warlegend098@gmail.com
                 </div>
               </div>
             </div>
@@ -145,8 +145,8 @@ const Footer = () => {
           </div> */}
         </div>
         <div className="footer-lower">
-          <p>Fitnase | Developed by: e-plugins</p>
-          <p>© Fitnase 2021 | All Right Reserved</p>
+          <p>Titan Gym | Developed by: Usman Siddiqui</p>
+          <p>© Fitnase 2026 | All Right Reserved</p>
         </div>
       </div>
     </div>
