@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const ContactFirst = () => {
-
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const ContactFirst = () => {
             toggleActions: "play none none none",
           },
           immediateRender: false,
-        }
+        },
       );
     });
 
@@ -38,4 +37,4 @@ const ContactFirst = () => {
   );
 };
 
-export default Contactfirst;
+export default ContactFirst;
